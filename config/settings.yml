@@ -1,0 +1,5 @@
+line:
+    channel:
+        id: <%= ENV["LINE_CHANNEL_ID"] %>
+        secret: <%= ENV["LINE_CHANNEL_ID"] %>
+        token: <%= ENV["LINE_CHANNEL_TOKEN"] %>
