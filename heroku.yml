@@ -2,5 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  #web: bundle exec rails server -p $PORT -b 0.0.0.0
-  web: ./qs server
+  web: bundle exec puma config/puma.rb
