@@ -206,11 +206,8 @@ rails_server() {
     if [ -n "$RAILS_ENV" ]; then
         renv="-e RAILS_ENV=$RAILS_ENV "
     fi
-    if [ -n "$PORT" ]; then
-        p = 3000
-    fi
 
-    $dc run $rm ${renv}--service-ports $app rails s -p ${p} -b 0.0.0.0
+    $dc run $rm ${renv}--service-ports $app rails s -p ${PORT:-3000} -b 0.0.0.0
 }
 
 rails_db() {
