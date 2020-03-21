@@ -29,11 +29,14 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs
 
 # setting work directory
-RUN mkdir /app
-WORKDIR /app
+RUN mkdir -p /tmp
+WORKDIR /tmp
+ADD Gemfile Gemfile
+ADD Gemfile.lock Gemfile.lock
+RUN bundle install
 
 # setting environment value
 ENV HOME /app
-
-# executing bundle install
-COPY Gemfile /app/Gemfile
+RUN mkdir -p /app
+WORKDIR $HOME
+ADD . $HOME
