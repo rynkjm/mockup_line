@@ -37,5 +37,5 @@ ENV HOME /app
 
 # executing bundle install
 COPY Gemfile /app/Gemfile
-
+ADD . /app
 RUN bundle install
