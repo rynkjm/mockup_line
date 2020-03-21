@@ -40,3 +40,4 @@ ENV HOME /app
 RUN mkdir -p /app
 WORKDIR $HOME
 ADD . $HOME
+
