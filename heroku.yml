@@ -6,4 +6,4 @@ release:
   command:
     - bundle exec rake db:migrate
 run:
-  web: bundle exec puma config/puma.rb
+  web:  bundle exec puma config/puma.rb
