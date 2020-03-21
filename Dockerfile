@@ -39,5 +39,7 @@ RUN bundle install
 ENV HOME /app
 RUN mkdir -p /app
 WORKDIR $HOME
+RUN mkdir -p tmp/sockets
+RUN mkdir -p tmp/pids
 ADD . $HOME
 
