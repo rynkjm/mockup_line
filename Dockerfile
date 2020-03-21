@@ -28,12 +28,12 @@ RUN apt-get update && apt-get install -y yarn
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs
 
-# setting work directory
-RUN mkdir -p /tmp
-WORKDIR /tmp
-ADD Gemfile Gemfile
-ADD Gemfile.lock Gemfile.lock
-RUN bundle install
+## setting work directory
+#RUN mkdir -p /tmp
+#WORKDIR /tmp
+#ADD Gemfile Gemfile
+#ADD Gemfile.lock Gemfile.lock
+#RUN bundle install
 
 # setting environment value
 ENV HOME /app
@@ -41,6 +41,7 @@ RUN mkdir -p /app
 WORKDIR $HOME
 RUN mkdir -p tmp/sockets
 RUN mkdir -p tmp/pids
-ADD . $HOME
+ADD Gemfile Gemfile
+ADD Gemfile.lock Gemfile.lock
 RUN bundle install
-
+COPY . $HOME
