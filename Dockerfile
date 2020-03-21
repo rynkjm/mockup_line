@@ -42,4 +42,5 @@ WORKDIR $HOME
 RUN mkdir -p tmp/sockets
 RUN mkdir -p tmp/pids
 ADD . $HOME
+RUN bundle install
 
